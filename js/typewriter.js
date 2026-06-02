@@ -6,6 +6,18 @@
         var paragraphs = container.querySelectorAll('p');
         if (!paragraphs.length) return;
 
+        var isMobile = window.matchMedia && window.matchMedia('(max-width: 900px)').matches;
+        var isIphoneText = selector.indexOf('.iphone') !== -1;
+        var isPcText = selector.indexOf('.pc') !== -1;
+
+        if ((isMobile && isPcText) || (!isMobile && isIphoneText)) {
+            paragraphs.forEach(function(p) {
+                p.style.opacity = '1';
+                p.classList.remove('typing-cursor');
+            });
+            return;
+        }
+
         var textContents = [];
         paragraphs.forEach(function(p) {
             textContents.push(p.innerHTML.trim());
@@ -16,13 +28,17 @@
 
         var paragraphIndex = 0;
         var charIndex = 0;
-        var typingSpeed = 50;
+        var typingSpeed = isMobile ? 13 : 50;
+        var paragraphDelay = isMobile ? 70 : 180;
 
         function typeCharacter() {
             if (paragraphIndex >= paragraphs.length) {
                 if (paragraphs.length > 0) {
                     paragraphs[paragraphs.length - 1].classList.remove('typing-cursor');
                 }
+                window.dispatchEvent(new CustomEvent('homeTypewriterComplete', {
+                    detail: { selector: selector }
+                }));
                 return;
             }
 
@@ -54,11 +70,11 @@
                 currentP.classList.remove('typing-cursor');
                 paragraphIndex++;
                 charIndex = 0;
-                setTimeout(typeCharacter, 180);
+                setTimeout(typeCharacter, paragraphDelay);
             }
         }
 
-        setTimeout(typeCharacter, 600);
+        setTimeout(typeCharacter, isMobile ? 420 : 600);
     }
 
     window.addEventListener('DOMContentLoaded', function() {

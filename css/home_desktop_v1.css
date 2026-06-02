@@ -1,0 +1,152 @@
+@media (min-width: 901px) {
+    .root {
+        width: 100vw;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .main-content {
+        width: min(100%, 1680px) !important;
+        height: calc(100vh - 38px - 70px) !important;
+        margin: 0 auto;
+        display: grid !important;
+        grid-template-columns: minmax(520px, 1.28fr) minmax(360px, 0.72fr) !important;
+        gap: clamp(28px, 3vw, 56px) !important;
+        padding: clamp(24px, 3vh, 42px) clamp(38px, 4vw, 72px) !important;
+        align-items: stretch !important;
+    }
+
+    .left-section {
+        width: auto !important;
+        height: 100% !important;
+        min-width: 0;
+    }
+
+    .background-images {
+        height: 100% !important;
+        min-height: 0 !important;
+    }
+
+    .left-section .signature-overlay {
+        width: clamp(260px, 26vw, 520px) !important;
+    }
+
+    .photo-logo {
+        top: clamp(26px, 4vh, 48px);
+        left: clamp(28px, 3.5vw, 56px);
+        gap: clamp(18px, 2.4vh, 28px);
+    }
+
+    .right-section {
+        min-width: 0;
+        height: 100%;
+        display: grid !important;
+        grid-template-columns: minmax(260px, 1fr) clamp(58px, 7vw, 96px) !important;
+        grid-template-rows: 1fr auto;
+        column-gap: clamp(20px, 2.8vw, 44px) !important;
+        row-gap: 18px !important;
+        align-items: center;
+        border-left: 1px solid var(--border-color);
+        padding: clamp(16px, 2.5vh, 32px) clamp(8px, 1vw, 18px) clamp(16px, 2vh, 26px) clamp(28px, 3vw, 52px) !important;
+    }
+
+    .right-section .text.pc {
+        width: 100% !important;
+        max-width: 420px !important;
+        justify-self: start;
+        align-self: center;
+        margin: 0 !important;
+        padding: 30px 28px 26px !important;
+    }
+
+    .text p {
+        font-size: clamp(12px, 0.78vw, 13.5px) !important;
+        line-height: 1.72 !important;
+        margin-bottom: 6px !important;
+    }
+
+    .portfolio-img {
+        width: auto !important;
+        height: clamp(260px, 46vh, 430px) !important;
+        max-height: 430px !important;
+        justify-self: center !important;
+        align-self: center !important;
+        object-fit: contain !important;
+        opacity: 0.88 !important;
+        transform: none !important;
+        animation: revealPortfolio 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+    }
+
+    .geo-icon {
+        height: clamp(48px, 7vh, 74px) !important;
+        margin-right: 0 !important;
+        justify-self: center !important;
+        align-self: end !important;
+    }
+}
+
+@media (min-width: 901px) and (max-width: 1180px) {
+    .root {
+        height: auto;
+        min-height: 100vh;
+        overflow-y: auto;
+    }
+
+    html,
+    body {
+        height: auto;
+        overflow-y: auto !important;
+    }
+
+    .main-content {
+        height: auto !important;
+        min-height: calc(100vh - 38px - 70px);
+        grid-template-columns: 1fr !important;
+        gap: 26px !important;
+        padding: 28px clamp(32px, 5vw, 56px) 24px !important;
+    }
+
+    .left-section {
+        height: auto !important;
+    }
+
+    .background-images {
+        height: auto !important;
+        aspect-ratio: 16 / 9;
+    }
+
+    .left-section .signature-overlay {
+        width: clamp(260px, 42vw, 430px) !important;
+    }
+
+    .right-section {
+        height: auto;
+        border-left: 0;
+        border-top: 1px solid var(--border-color);
+        grid-template-columns: minmax(0, 1fr) 82px !important;
+        padding: 26px 0 4px !important;
+    }
+
+    .right-section .text.pc {
+        max-width: 560px !important;
+    }
+
+    .portfolio-img {
+        height: 280px !important;
+        align-self: start !important;
+    }
+
+    .geo-icon {
+        height: 52px !important;
+    }
+}
+
+@media (min-width: 1501px) {
+    .main-content {
+        grid-template-columns: minmax(620px, 1.22fr) minmax(420px, 0.78fr) !important;
+    }
+
+    .right-section .text.pc {
+        max-width: 460px !important;
+    }
+}

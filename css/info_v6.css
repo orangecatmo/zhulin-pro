@@ -424,7 +424,7 @@ a {
 @keyframes profilePhotoSpring {
     to {
         opacity: 1;
-        transform: translateY(0) rotate(-1.5deg) scale(1);
+        transform: translateY(0) rotate(0deg) scale(1);
     }
 }
 
@@ -447,7 +447,7 @@ a {
 .photo-date {
     position: absolute;
     top: 50%;
-    right: -24px;
+    right: -29px;
     transform: translateY(-50%) rotate(90deg);
     transform-origin: center;
     color: var(--accent-color);
