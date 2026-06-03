@@ -152,6 +152,6 @@
     }
 }
 .left-section .photo-logo img.signature-overlay {
-    width: 550px !important;
-    max-width: none !important;
+    width: clamp(250px, 60vw, 580px) !important;
+    max-width: 100% !important;
 }
