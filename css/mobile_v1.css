@@ -120,7 +120,7 @@
 
     .left-section .signature-overlay,
     .signature-overlay {
-        width: min(68vw, 310px) !important;
+        width: min(68vw, 260px) !important;
         max-width: 100%;
     }
 
