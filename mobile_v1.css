@@ -904,3 +904,10 @@
         font-size: 22px !important;
     }
 }
+@media (max-width: 900px) {
+  .left-section .photo-logo img.signature-overlay {
+    width: 280px !important;
+    max-width: 120vw !important;
+    height: auto !important;
+  }
+}
