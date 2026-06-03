@@ -56,7 +56,7 @@
         justify-self: start;
         align-self: center;
         margin: 0 !important;
-        padding: 30px 28px 26px !important;
+        padding: 30px 0px 26px !important;
     }
 
     .text p {
@@ -67,13 +67,14 @@
 
     .portfolio-img {
         width: auto !important;
-        height: clamp(260px, 46vh, 430px) !important;
-        max-height: 430px !important;
+        height: clamp(260px, 46vh, 630px) !important;
+        max-height: 630px !important;
         justify-self: center !important;
         align-self: center !important;
         object-fit: contain !important;
         opacity: 0.88 !important;
         transform: none !important;
+        transform: translateY(-120px) !important;
         animation: revealPortfolio 1.2s cubic-bezier(0.25, 1, 0.5, 1) forwards;
     }
 
@@ -149,4 +150,8 @@
     .right-section .text.pc {
         max-width: 460px !important;
     }
+}
+.left-section .photo-logo img.signature-overlay {
+    width: 600px !important;
+    max-width: none !important;
 }
